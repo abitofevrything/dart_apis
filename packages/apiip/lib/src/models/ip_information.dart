@@ -2,6 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'ip_information.g.dart';
 
+Duration _durationFromSeconds(int s) => Duration(seconds: s);
+
 /// {@template ip_information}
 /// Information about an IP address.
 /// {@endtemplate}
@@ -51,7 +53,8 @@ class IpInformation {
 
   /// The calling/dial code associated with the IP address. (e.g. 381 for
   /// Serbia)
-  final String? phoneCode;
+  @JsonKey(fromJson: int.parse)
+  final int? phoneCode;
 
   /// The emoji icon for the country flag associated with the IP address.
   final String? countryFlagEmoj;
@@ -160,7 +163,8 @@ class CurrencyInformation {
   final String symbol;
 
   /// The number of this currency.
-  final String number;
+  @JsonKey(fromJson: int.parse)
+  final int number;
 
   /// An object containing rates from the USD and EUR to this currency.
   final Map<String, double> rates;
@@ -198,7 +202,8 @@ class TimeZoneInformation {
 
   /// The UTC offset which is the difference between Coordinated Universal Time
   /// (UTC) and local time.
-  final int utcOffset;
+  @JsonKey(fromJson: _durationFromSeconds)
+  final Duration utcOffset;
 
   /// {@macro time_zone}
   TimeZoneInformation({

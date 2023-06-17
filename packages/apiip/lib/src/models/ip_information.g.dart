@@ -22,7 +22,7 @@ IpInformation _$IpInformationFromJson(Map<String, dynamic> json) =>
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       capital: json['capital'] as String?,
-      phoneCode: json['phoneCode'] as String?,
+      phoneCode: int.parse(json['phoneCode'] as String),
       countryFlagEmoj: json['countryFlagEmoj'] as String?,
       countryFlagEmojUnicode: json['countryFlagEmojUnicode'] as String?,
       isEu: json['isEu'] as bool?,
@@ -102,7 +102,7 @@ CurrencyInformation _$CurrencyInformationFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String,
       name: json['name'] as String,
       symbol: json['symbol'] as String,
-      number: json['number'] as String,
+      number: int.parse(json['number'] as String),
       rates: (json['rates'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, (e as num).toDouble()),
       ),
@@ -124,7 +124,7 @@ TimeZoneInformation _$TimeZoneInformationFromJson(Map<String, dynamic> json) =>
       currentTime: json['currentTime'] as String,
       code: json['code'] as String,
       timeZoneName: json['timeZoneName'] as String,
-      utcOffset: json['utcOffset'] as int,
+      utcOffset: _durationFromSeconds(json['utcOffset'] as int),
     );
 
 Map<String, dynamic> _$TimeZoneInformationToJson(
@@ -134,7 +134,7 @@ Map<String, dynamic> _$TimeZoneInformationToJson(
       'currentTime': instance.currentTime,
       'code': instance.code,
       'timeZoneName': instance.timeZoneName,
-      'utcOffset': instance.utcOffset,
+      'utcOffset': instance.utcOffset.inMicroseconds,
     };
 
 UserAgentInformation _$UserAgentInformationFromJson(
