@@ -1,0 +1,17 @@
+name: api_tooling
+description: Utilities for developing safe & complete API wrappers
+version: 0.1.0
+topics: [api]
+
+repository: https://github.com/abitofevrything/dart_apis/tree/main/api_tooling
+issues: https://github.com/abitofevrything/dart_apis
+
+environment:
+  sdk: ^3.1.0-145.0.dev
+
+dependencies:
+  http: ^1.0.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0

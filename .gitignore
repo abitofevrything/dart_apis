@@ -1,0 +1,7 @@
+# Melos-generated pubspec overrides
+pubspec_overrides.yaml
+
+# IDE confiiguration folders
+.vscode/
+.idea/
+*.iml

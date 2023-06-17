@@ -1,0 +1,6 @@
+name: dart_apis
+
+packages:
+  - api_tooling/
+  - packages/*
+

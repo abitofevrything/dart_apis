@@ -1,0 +1,21 @@
+name: apiip
+description: A wrapper around the apiip.net API for IPv4 and IPv6 information lookups.
+tags: [api, apiip, ip, apiip.net]
+version: 1.0.0
+
+repository: https://github.com/abitofevrything/dart_apis/tree/main/packages/apiip
+issues: https://github.com/abitofevrything/dart_apis/issues
+
+environment:
+  sdk: ^3.1.0-145.0.dev
+
+dependencies:
+  http: ^1.0.0
+  json_annotation: ^4.8.1
+  api_tooling: ^0.1.0
+
+dev_dependencies:
+  build_runner: ^2.4.5
+  json_serializable: ^6.7.0
+  lints: ^2.0.0
+  test: ^1.21.0
