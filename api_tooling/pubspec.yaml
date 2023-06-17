@@ -7,7 +7,7 @@ repository: https://github.com/abitofevrything/dart_apis/tree/main/api_tooling
 issues: https://github.com/abitofevrything/dart_apis
 
 environment:
-  sdk: ^3.1.0-145.0.dev
+  sdk: ^3.0.0
 
 dependencies:
   http: ^1.0.0
